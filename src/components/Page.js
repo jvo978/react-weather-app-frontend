@@ -20,7 +20,7 @@ const [latLng, setlatLng] = useState(null)
 const [listOfHistory, setListOfHistory] = useState([])
 
 const onLoad = () => {
-    axios.get(`${HEROKU_URL}/`, { headers: {
+    axios.get(`https://mycorsproxy-jvo978.herokuapp.com/${HEROKU_URL}/`, { headers: {
         'X-Requested-With': 'XMLHttpRequest'
       }}).then((response) => {
         if (response.data.err) {
@@ -72,7 +72,7 @@ const onSubmit = async location => {
             throw new SyntaxError('No additional forecast found for this location..')
         }
 
-        await axios.post(`${HEROKU_URL}/`, { 
+        await axios.post(`https://mycorsproxy-jvo978.herokuapp.com/${HEROKU_URL}/`, { 
             location_id: data.id,
             location: data.name,
             country: data.sys.country,
