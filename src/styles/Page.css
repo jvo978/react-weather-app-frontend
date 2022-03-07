@@ -1,0 +1,92 @@
+.page__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 1300px;
+    width: 1300px;
+    height: 800px;
+    max-height: 800px;
+    background-color: #708090;
+    border: 1px solid black;
+    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 25px;
+    justify-content: center;
+    overflow: auto;
+}
+
+.page__none {
+    width: 600px;
+    height: 100%;
+    max-width: 700px;
+    max-height: 600px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #708090;
+    border: 1px solid black;
+    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 25px;
+    justify-content: center;
+    overflow: auto;
+}
+
+.page__header {
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: black;
+}
+
+.page__errorMessage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 35px;
+    margin-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    background-color: #f44336;
+    color: white;
+    text-align: center;
+}
+
+.page__forecastMapContainer {
+    display: flex;
+}
+
+.page__forecastMap {
+    display: flex;
+}
+
+.historyList {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    width: 250px;
+    height: 450px;
+    max-height: 450px;
+    max-width: 400px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.historyList ul {
+    margin: 5px;
+}
+
+.historyList li {
+    padding-right: 25px;
+    list-style: none;
+}
+
+.historyList li:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.historyList .recentSearch {
+    font-weight: bold;
+    font-size: 20px;
+}

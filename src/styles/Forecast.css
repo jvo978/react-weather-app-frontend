@@ -1,0 +1,23 @@
+.forecast__container {
+    display: flex;
+    max-width: 800px;
+    max-height: 650px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+}
+
+.forecast__current {
+    width: 300px;
+    height: 250px;
+    background-color: #aba2b4;
+}
+
+.forecast__details {
+    width: 300px;
+    height: 250px;
+    background-color: #aba2b4;
+}

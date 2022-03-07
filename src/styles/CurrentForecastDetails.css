@@ -1,0 +1,12 @@
+.currentForecast__details {
+    display: flex;
+    flex-direction: column;
+}
+
+.currentForecast__detailItem {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin: 5px;
+    height: 40px;
+}

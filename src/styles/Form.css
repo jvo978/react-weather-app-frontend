@@ -1,0 +1,27 @@
+.form__container input {
+    width: 300px;
+    height: 30px;
+    border: none;
+    outline: none;
+    margin: 5px 0 5px 0;
+    text-align: center;
+    font-size: 16px;
+}
+
+.form__container button {
+    width: 80px;
+    height: 32px;
+    border: none;
+}
+
+.form__container button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.form__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
