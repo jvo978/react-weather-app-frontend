@@ -9,7 +9,7 @@ import getCurrentForecastDetails from '../helpers.js/getCurrentForecastDetails';
 import getUpcomingForecast from '../helpers.js/getUpcomingForecast';
 
 const BASEURL = "https://community-open-weather-map.p.rapidapi.com"
-const HEROKU_URL = "https://weather-jvo978-reactjs.herokuapp.com"
+const HEROKU_URL = "https://react-weather-app-api-jvo978.herokuapp.com"
 
 function Page() {
 
