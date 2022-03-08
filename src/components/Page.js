@@ -19,7 +19,7 @@ const [latLng, setlatLng] = useState(null)
 const [listOfHistory, setListOfHistory] = useState([])
 
 const onLoad = () => {
-    axios.get('http://localhost:3001').then((response) => {
+    axios.get('http://localhost:3001/').then((response) => {
         if (response.data.err) {
             return;
         }
@@ -69,7 +69,7 @@ const onSubmit = async location => {
             throw new SyntaxError('No additional forecast found for this location..')
         }
 
-        await axios.post('http:localhost:3001/', { 
+        await axios.post('http://localhost:3001/', { 
             location_id: data.id,
             location: data.name,
             country: data.sys.country,
