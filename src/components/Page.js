@@ -9,7 +9,6 @@ import getCurrentForecastDetails from '../helpers.js/getCurrentForecastDetails';
 import getUpcomingForecast from '../helpers.js/getUpcomingForecast';
 
 const BASEURL = "https://community-open-weather-map.p.rapidapi.com"
-const HEROKU_URL = "https://react-weather-app-api-jvo978.herokuapp.com"
 
 function Page() {
 
@@ -20,7 +19,7 @@ const [latLng, setlatLng] = useState(null)
 const [listOfHistory, setListOfHistory] = useState([])
 
 const onLoad = () => {
-    axios.get(`${HEROKU_URL}/`).then((response) => {
+    axios.get('http://localhost:3001').then((response) => {
         if (response.data.err) {
             return;
         }
@@ -70,7 +69,7 @@ const onSubmit = async location => {
             throw new SyntaxError('No additional forecast found for this location..')
         }
 
-        await axios.post(`${HEROKU_URL}/`, { 
+        await axios.post('http:localhost:3001/', { 
             location_id: data.id,
             location: data.name,
             country: data.sys.country,
