@@ -64,7 +64,7 @@
     display: flex;
     flex-direction: column;
     color: white;
-    width: 250px;
+    width: 300px;
     height: 450px;
     max-height: 450px;
     max-width: 400px;
@@ -77,7 +77,7 @@
 }
 
 .historyList li {
-    padding-right: 25px;
+    margin-right: 10px;
     list-style: none;
 }
 
@@ -86,7 +86,39 @@
     cursor: pointer;
 }
 
+
 .historyList .recentSearch {
+    display: flex;
+    align-items: center;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 24px;
+}
+
+.historyList .clearIcon {
+    font-size: small;
+    color: black;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+}
+
+.historyList .clearAllIcon {
+    margin-left: 5px;
+    margin-top: 3px;
+}
+
+.historyList .clearAllIcon:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.historyList ul {
+    display: flex;
+    align-items: center;
+}
+
+.historyList .clearIcon:hover {
+    background: red;
+    color: white;
+    cursor: pointer;
 }

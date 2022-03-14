@@ -7,6 +7,8 @@ import { useEffect, useState } from 'react'
 import getCurrentForecast from '../helpers.js/getCurrentForecast';
 import getCurrentForecastDetails from '../helpers.js/getCurrentForecastDetails';
 import getUpcomingForecast from '../helpers.js/getUpcomingForecast';
+import ClearIcon from '@mui/icons-material/Clear';
+import ClearAllIcon from '@mui/icons-material/ClearAll';
 
 const BASEURL = "https://community-open-weather-map.p.rapidapi.com"
 
@@ -18,6 +20,10 @@ const [forecast, setForecast] = useState(null)
 const [latLng, setlatLng] = useState(null)
 const [listOfHistory, setListOfHistory] = useState([])
 
+useEffect(() => {
+    onLoad()
+}, [])
+
 const onLoad = () => {
     axios.get('http://localhost:3001/').then((response) => {
         if (response.data.err) {
@@ -27,9 +33,25 @@ const onLoad = () => {
     })
 }
 
-useEffect(() => {
-    onLoad()
-}, [])
+const deleteSearch = (id) => {
+    axios.delete(`http://localhost:3001/${id}`).then((response) => {
+        if (response.data.err) {
+            return;
+        } else {
+            onLoad()
+        }
+    })
+}
+
+const deleteAll = () => {
+    axios.delete('http://localhost:3001/').then((response) => {
+        if (response.data.err) {
+            return;
+        } else {
+            onLoad()
+        }
+    })
+}
 
 const onSubmit = async location => {
     try {
@@ -77,7 +99,6 @@ const onSubmit = async location => {
             lon: data.coord.lon
         }).then((response) => {
             if (response.data.err) {
-                console.log(response.data.err)
                 return;
             } else {
                 onLoad()
@@ -119,11 +140,18 @@ const onSubmit = async location => {
                 }
                 {listOfHistory.length > 0 && 
                     <div className='historyList'>
-                        <div className='recentSearch'>Recent Searches</div>
+                        <div className='recentSearch'>
+                            <span>Recent Searches </span>
+                        <ClearAllIcon onClick={deleteAll} className='clearAllIcon'/>
+                        </div>
                         {listOfHistory.map((item, i) => {
                             return (
                                 <ul key={i}>
-                                    <li onClick={() => { onSubmit(item.location)} }>{item.location}, {item.country}</li>
+                                    <li 
+                                    onClick={() => { onSubmit(item.location)} }>
+                                        {item.location}, {item.country}
+                                    </li>
+                                        <ClearIcon onClick={() => { deleteSearch(item.history_id)}} className='clearIcon' />
                                 </ul>
                                 )
                      })}
