@@ -37,8 +37,11 @@ const deleteSearch = (id) => {
     axios.delete(`http://localhost:3001/${id}`).then((response) => {
         if (response.data.err) {
             return;
-        } else {
+        }
+        if (listOfHistory.length > 0) {
             onLoad()
+        } else {
+            setListOfHistory(0)
         }
     })
 }
@@ -48,7 +51,7 @@ const deleteAll = () => {
         if (response.data.err) {
             return;
         } else {
-            onLoad()
+            setListOfHistory(0)
         }
     })
 }
